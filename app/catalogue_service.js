@@ -23,11 +23,16 @@ const catalogue = [
 ];
 
 function countBooks() {
-  // Your code here
+  return catalogue.length;
 }
 
 function checkBook(book) {
-  // Your code here
+ for (let i = 0; i < catalogue.length; i++) {
+   if (book === catalogue[i]) {
+     return true;
+   }
+ }
+ return false;
 }
 
 function countBooksByFirstLetter(letter) {
