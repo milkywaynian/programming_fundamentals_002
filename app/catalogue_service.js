@@ -36,11 +36,25 @@ function checkBook(book) {
 }
 
 function countBooksByFirstLetter(letter) {
-  // Your code here
+  let letterCollection = 0;
+  for (let i = 0; i < catalogue.length; i++) {
+    if (letter === catalogue[i][0]) {
+      letterCollection++;
+    }
+  }
+  return letterCollection;
 }
 
 function countBooksByKeyword(keyword) {
-  // Your code here
+  let count = 0;
+  let newKeyword = keyword[0].toUpperCase() + keyword.slice(1);
+  console.log(newKeyword);
+  for (let i = 0; i < catalogue.length; i++) {
+  if (catalogue[i].includes(newKeyword)) {
+    count++
+  }
+}
+return count;
 }
 
 function getBooksByAuthor(author) {

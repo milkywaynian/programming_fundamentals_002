@@ -16,4 +16,20 @@ describe("catalogueService", () => {
       expect(catalogueService.checkBook("Moths by Pamela Mothman")).toBe(false);
     });
 });
+
+describe("catalogueService.countBooksByFirstLetter", () => {
+  test("returns the number of books beginning with the given letter", () => {
+    expect(catalogueService.countBooksByFirstLetter("W")).toBe(2);
+  });
+
+  test("returns 0 if no books begin with the given letter", () => {
+    expect(catalogueService.countBooksByFirstLetter("X")).toBe(0);
+  });
+});
+
+describe("countBooksByKeyword", () => {
+  test("returns the number of books that match a given keyword", () => {
+    expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
+  });
+});
 });
