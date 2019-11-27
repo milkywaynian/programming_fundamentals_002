@@ -31,5 +31,21 @@ describe("countBooksByKeyword", () => {
   test("returns the number of books that match a given keyword", () => {
     expect(catalogueService.countBooksByKeyword("assassin")).toBe(3);
   });
+
+  test("returns 0 if no books match a given keyword", () => {
+    expect(catalogueService.countBooksByKeyword("pineapple")).toBe(0);
+  });
+});
+
+describe("getBooksByAuthor", () => {
+  test("provides a list of books by a given author", () => {
+    expect(catalogueService.getBooksByAuthor("Charles Dickens")).toEqual([
+      "A Tale of Two Cities by Charles Dickens",
+      "Oliver Twist by Charles Dickens",
+      "Great Expectations by Charles Dickens"])
+    });
+  test("writes an empty array when no author is matched", () => {
+    expect(catalogueService.getBooksByAuthor("Elizabeth Gilbert")).toEqual([]);
+  });
 });
 });

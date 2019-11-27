@@ -47,8 +47,7 @@ function countBooksByFirstLetter(letter) {
 
 function countBooksByKeyword(keyword) {
   let count = 0;
-  let newKeyword = keyword[0].toUpperCase() + keyword.slice(1);
-  console.log(newKeyword);
+  const newKeyword = keyword[0].toUpperCase() + keyword.slice(1);
   for (let i = 0; i < catalogue.length; i++) {
   if (catalogue[i].includes(newKeyword)) {
     count++
@@ -57,8 +56,9 @@ function countBooksByKeyword(keyword) {
 return count;
 }
 
+
 function getBooksByAuthor(author) {
-  // Your code here
+  return catalogue.filter(bookEntry => bookEntry.includes(author));
 }
 
 module.exports = {
